@@ -1,0 +1,19 @@
+---
+name: Fonttools test
+
+on:
+  workflow_call:
+
+jobs:
+  fonttools:
+    name: Fonttools
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⏬ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⏬ Install fonttools
+        run: |
+          pip3 install fonttools
+          pip3 install brotli
+          fonttools --help

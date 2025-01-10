@@ -10,6 +10,9 @@ jobs:
   init:
     uses: ./.github/workflows/00-init.yml
 
+  fonttools-test:
+    uses: ./.github/workflows/00-fonttools-test.yml
+
   scan-secrets:
     # disable secret scanning on "main" branch (because truffleHog has issues with this) and check for a fork as the source that's heading on the main branch, which would fail as well.
     if: github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'db-ui'
